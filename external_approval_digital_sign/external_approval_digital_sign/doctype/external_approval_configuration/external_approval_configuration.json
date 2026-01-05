@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-01 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "doctype_name",
+  "is_active",
+  "column_break_1",
+  "workflow_state_for_external_approval",
+  "workflow_state_after_approval",
+  "section_break_1",
+  "signature_field_name",
+  "signature_format",
+  "email_template_for_approval_request",
+  "email_template_for_approval_confirmation"
+ ],
+ "fields": [
+  {
+   "fieldname": "doctype_name",
+   "fieldtype": "Link",
+   "label": "DocType Name",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active",
+   "default": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "workflow_state_for_external_approval",
+   "fieldtype": "Data",
+   "label": "Workflow State for External Approval",
+   "description": "When document reaches this workflow state, it will be sent for external approval",
+   "reqd": 1
+  },
+  {
+   "fieldname": "workflow_state_after_approval",
+   "fieldtype": "Data",
+   "label": "Workflow State After Approval",
+   "description": "Document will transition to this state after client approval",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Signature Configuration"
+  },
+  {
+   "fieldname": "signature_field_name",
+   "fieldtype": "Data",
+   "label": "Signature Field Name",
+   "description": "Field name in the doctype where signature will be stored (e.g., 'client_signature')",
+   "reqd": 1
+  },
+  {
+   "fieldname": "signature_format",
+   "fieldtype": "Select",
+   "label": "Signature Format",
+   "options": "Name - Date\nDate - Name\nName on Date",
+   "default": "Name - Date"
+  },
+  {
+   "fieldname": "email_template_for_approval_request",
+   "fieldtype": "Link",
+   "label": "Email Template for Approval Request",
+   "options": "Email Template"
+  },
+  {
+   "fieldname": "email_template_for_approval_confirmation",
+   "fieldtype": "Link",
+   "label": "Email Template for Approval Confirmation",
+   "options": "Email Template"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2024-01-01 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "External Approval Digital Sign",
+ "name": "External Approval Configuration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
+

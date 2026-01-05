@@ -1,0 +1,12 @@
+{
+ "app_name": "external_approval_digital_sign",
+ "app_version": "0.1.0",
+ "app_title": "External Approval Digital Sign",
+ "app_publisher": "Your Company",
+ "app_description": "Plug and play Frappe app for external client approval and digital signature capture",
+ "app_icon": "octicon octicon-file-directory",
+ "app_color": "grey",
+ "app_email": "your.email@example.com",
+ "app_license": "MIT"
+}
+
