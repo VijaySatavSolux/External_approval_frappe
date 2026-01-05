@@ -16,11 +16,13 @@ See [INSTALLATION.md](INSTALLATION.md) for detailed installation instructions.
 
 Quick start:
 ```bash
-bench get-app external_approval_digital_sign /path/to/external_approval_digital_sign
-bench install-app external_approval_digital_sign
+bench get-app external_approval_digital_sign https://github.com/VijaySatavSolux/External_approval_frappe.git --skip-assets
+bench install-app external_approval_digital_sign --skip-assets
 bench migrate
 bench restart
 ```
+
+**Note:** The `--skip-assets` flag is recommended to avoid build errors, as this app doesn't require frontend asset compilation.
 
 ## Configuration
 

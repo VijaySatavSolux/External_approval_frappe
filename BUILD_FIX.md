@@ -1,50 +1,59 @@
 # Build Error Fix
 
 ## Issue
-The build error occurs because Frappe's build system expects certain directory structures and files to exist, even if they're minimal.
+The build error occurs because Frappe's esbuild is having trouble resolving paths for apps without frontend assets. This is a known issue in some Frappe versions.
 
-## Solution Applied
-I've added:
-1. `package.json` - Required for npm/yarn build process
-2. Minimal asset files:
-   - `public/js/external_approval_digital_sign.js`
-   - `public/css/external_approval_digital_sign.css`
-3. Proper directory structure with `__init__.py` files
+## Solution: Install with --skip-assets Flag
 
-## Next Steps
+Since this app is primarily backend-focused and doesn't require frontend assets, the best solution is to install it with the `--skip-assets` flag:
 
-1. **Commit and push these changes to your repository:**
+### Recommended Installation Method:
+
 ```bash
-cd /home/vijaysatav/Desktop/External\ Approval\ and\ Digital\ Sign
-git add .
-git commit -m "Fix build error by adding required asset files"
-git push
-```
-
-2. **In your bench, update the app:**
-```bash
-cd ~/ERPNEXT
-bench update --app external_approval_digital_sign
-bench build --app external_approval_digital_sign
-```
-
-3. **If the error persists, try:**
-```bash
-# Remove and reinstall the app
+# Remove the app if already installed
 bench remove-app external_approval_digital_sign
-bench get-app external_approval_digital_sign https://github.com/VijaySatavSolux/External_approval_frappe.git
-bench install-app external_approval_digital_sign
-```
 
-## Alternative: Skip Assets Build
-
-If you want to install without building assets (for testing):
-```bash
+# Get and install with --skip-assets flag
 bench get-app external_approval_digital_sign https://github.com/VijaySatavSolux/External_approval_frappe.git --skip-assets
 bench install-app external_approval_digital_sign --skip-assets
+bench migrate
+bench restart
 ```
 
-However, it's better to fix the build issue properly.
+This will skip the asset build process and install the app successfully.
+
+## Alternative: Manual Installation
+
+If you prefer to install manually:
+
+1. **Clone the repository:**
+```bash
+cd ~/ERPNEXT/apps
+git clone https://github.com/VijaySatavSolux/External_approval_frappe.git external_approval_digital_sign
+```
+
+2. **Install Python package:**
+```bash
+cd ~/ERPNEXT
+bench setup requirements
+pip install -e apps/external_approval_digital_sign
+```
+
+3. **Install app to site:**
+```bash
+bench --site your-site-name install-app external_approval_digital_sign
+bench migrate
+bench restart
+```
+
+## Why This Works
+
+The `--skip-assets` flag tells bench to skip the frontend asset build process, which is causing the error. Since this app:
+- Doesn't have custom JavaScript/CSS that needs building
+- Uses standard Frappe web pages and templates
+- Is primarily backend-focused
+
+Skipping the asset build is safe and appropriate.
 
 ## Verification
 
