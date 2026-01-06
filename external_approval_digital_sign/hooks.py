@@ -9,6 +9,24 @@ app_color = "grey"
 app_email = "your.email@example.com"
 app_license = "MIT"
 
+# Apps
+# ------------------
+
+# required_apps = []
+
+# Each item in the list will be shown as an app in the apps page
+# add_to_apps_screen = [
+# 	{
+# 		"name": "external_approval_digital_sign",
+# 		"logo": "/assets/external_approval_digital_sign/logo.png",
+# 		"title": "External Approval and Digital Sign",
+# 		"route": "/external_approval_digital_sign",
+# 		"has_permission": "external_approval_digital_sign.api.permission.has_app_permission"
+# 	}
+# ]
+
+required_apps = ["frappe"]
+
 # Includes in <head>
 # ------------------
 

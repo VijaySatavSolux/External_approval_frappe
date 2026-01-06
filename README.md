@@ -2,6 +2,9 @@
 
 A plug-and-play Frappe app that enables external client approval workflows with digital signature capture for any doctype.
 
+> [!NOTE]
+> **Compatibility:** Fully compatible with Frappe Framework v15 and v16.
+
 ## Features
 
 - **Plug-and-Play**: Easily configure any doctype for external approval workflows

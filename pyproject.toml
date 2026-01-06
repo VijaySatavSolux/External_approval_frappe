@@ -1,0 +1,16 @@
+[project]
+name = "external_approval_digital_sign"
+authors = [
+    { name = "Your Name", email = "your.email@example.com"}
+]
+description = "Plug and play Frappe app for external client approval and digital signature capture"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    "frappe>=15.0.0",
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
