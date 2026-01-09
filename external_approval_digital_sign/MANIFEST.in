@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include external_approval_digital_sign *.css
+recursive-include external_approval_digital_sign *.csv
+recursive-include external_approval_digital_sign *.html
+recursive-include external_approval_digital_sign *.ico
+recursive-include external_approval_digital_sign *.js
+recursive-include external_approval_digital_sign *.json
+recursive-include external_approval_digital_sign *.md
+recursive-include external_approval_digital_sign *.png
+recursive-include external_approval_digital_sign *.py
+recursive-include external_approval_digital_sign *.svg
+recursive-include external_approval_digital_sign *.txt
+recursive-exclude external_approval_digital_sign *.pyc
