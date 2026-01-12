@@ -4,7 +4,8 @@
   "description": "Plug and play Frappe app for external client approval and digital signature capture",
   "private": true,
   "scripts": {
-    "build": "echo 'No build required for this app'"
+    "build": "echo 'No build required'",
+    "production": "echo 'No build required'"
   },
   "dependencies": {},
   "devDependencies": {}

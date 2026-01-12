@@ -18,23 +18,29 @@ A plug-and-play Frappe app that enables external client approval workflows with 
 See [INSTALLATION.md](INSTALLATION.md) for detailed installation instructions.
 
 ### Quick Start (Recommended)
-```bash
-bench get-app external_approval_digital_sign https://github.com/VijaySatavSolux/External_approval_frappe.git
-bench install-app external_approval_digital_sign
-bench migrate
-bench restart
-```
 
-### Alternative (If Build Issues Occur)
-If you encounter build errors, you can use the `--skip-assets` flag:
+**Important:** This app requires the `--skip-assets` flag due to its backend-only nature. The installation has been enhanced to automatically register the app even with `--skip-assets`.
+
 ```bash
+# 1. Get the app
 bench get-app external_approval_digital_sign https://github.com/VijaySatavSolux/External_approval_frappe.git --skip-assets
+
+# 2. Install the app
 bench install-app external_approval_digital_sign --skip-assets
+
+# 3. Run the fix script (ensures everything is registered)
+bench --site your-site-name execute external_approval_digital_sign.fix_installation.fix_installation
+
+# 4. Migrate and restart
 bench migrate
 bench restart
 ```
 
-**Note:** The app has been updated to work without `--skip-assets`. If you encounter installation issues, see [INSTALLATION_FIX.md](INSTALLATION_FIX.md) for troubleshooting.
+**Note:** 
+- The `--skip-assets` flag is required because this app doesn't have frontend assets that need building
+- The enhanced installation hooks will automatically register the app in `apps.txt` and create modules
+- The fix script is a safety measure to ensure everything is properly registered
+- If you encounter issues, see [COMPLETE_INSTALLATION_FIX.md](COMPLETE_INSTALLATION_FIX.md) for detailed troubleshooting
 
 ## Configuration
 

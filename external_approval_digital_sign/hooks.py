@@ -83,7 +83,7 @@ required_apps = ["frappe"]
 # Installation
 # ------------
 
-# before_install = "external_approval_digital_sign.install.before_install"
+before_install = "external_approval_digital_sign.install.before_install"
 after_install = "external_approval_digital_sign.install.after_install"
 
 # Uninstallation
