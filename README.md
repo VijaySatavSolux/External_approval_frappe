@@ -17,7 +17,16 @@ A plug-and-play Frappe app that enables external client approval workflows with 
 
 See [INSTALLATION.md](INSTALLATION.md) for detailed installation instructions.
 
-Quick start:
+### Quick Start (Recommended)
+```bash
+bench get-app external_approval_digital_sign https://github.com/VijaySatavSolux/External_approval_frappe.git
+bench install-app external_approval_digital_sign
+bench migrate
+bench restart
+```
+
+### Alternative (If Build Issues Occur)
+If you encounter build errors, you can use the `--skip-assets` flag:
 ```bash
 bench get-app external_approval_digital_sign https://github.com/VijaySatavSolux/External_approval_frappe.git --skip-assets
 bench install-app external_approval_digital_sign --skip-assets
@@ -25,7 +34,7 @@ bench migrate
 bench restart
 ```
 
-**Note:** The `--skip-assets` flag is recommended to avoid build errors, as this app doesn't require frontend asset compilation.
+**Note:** The app has been updated to work without `--skip-assets`. If you encounter installation issues, see [INSTALLATION_FIX.md](INSTALLATION_FIX.md) for troubleshooting.
 
 ## Configuration
 

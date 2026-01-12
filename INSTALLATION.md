@@ -14,17 +14,22 @@ cd /path/to/your/bench
 
 2. **Get the app:**
 ```bash
-bench get-app external_approval_digital_sign /path/to/external_approval_digital_sign --skip-assets
+bench get-app external_approval_digital_sign /path/to/external_approval_digital_sign
 ```
 
 Or if you're installing from a git repository:
 ```bash
-bench get-app external_approval_digital_sign https://github.com/VijaySatavSolux/External_approval_frappe.git --skip-assets
+bench get-app external_approval_digital_sign https://github.com/VijaySatavSolux/External_approval_frappe.git
 ```
 
-**Note:** Use the `--skip-assets` flag to avoid build errors since this app doesn't require frontend asset compilation.
+**Note:** The app has been updated to work without `--skip-assets`. If you encounter build errors, you can use `--skip-assets` flag, but see [INSTALLATION_FIX.md](INSTALLATION_FIX.md) if you encounter issues with app registration.
 
 3. **Install the app:**
+```bash
+bench install-app external_approval_digital_sign
+```
+
+If you used `--skip-assets` in step 2, also use it here:
 ```bash
 bench install-app external_approval_digital_sign --skip-assets
 ```

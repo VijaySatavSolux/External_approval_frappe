@@ -2,6 +2,11 @@
   "name": "external_approval_digital_sign",
   "version": "0.1.0",
   "description": "Plug and play Frappe app for external client approval and digital signature capture",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "echo 'No build required for this app'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }
 
